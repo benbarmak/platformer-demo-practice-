@@ -17,7 +17,6 @@ func _ready():
 
 func on_ground():
 	return ray.is_colliding()
-	# return (not get_colliding_bodies().empty())
 
 func _process(delta):
 
