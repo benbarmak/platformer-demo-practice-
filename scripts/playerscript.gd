@@ -27,7 +27,6 @@ func _process(delta):
 		set_axis_velocity(Vector2(speed,0))
 
 	if on_ground():
-		print("ray hit something")
 		if Input.is_action_pressed("ui_up"):
 			set_axis_velocity(Vector2(0,-jumpheight))
 
