@@ -16,7 +16,8 @@ func _ready():
 	ray = get_node ("RayCast2D")
 
 func on_ground():
-	return (not get_colliding_bodies().empty())
+	return ray.is_colliding()
+	# return (not get_colliding_bodies().empty())
 
 func _process(delta):
 
@@ -27,6 +28,7 @@ func _process(delta):
 		set_axis_velocity(Vector2(speed,0))
 
 	if on_ground():
+		print("ray hit something")
 		if Input.is_action_pressed("ui_up"):
 			set_axis_velocity(Vector2(0,-jumpheight))
 
